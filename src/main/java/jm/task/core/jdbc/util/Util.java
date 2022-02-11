@@ -17,7 +17,7 @@ public class Util {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         Connection connection = DriverManager.getConnection(url, userName, pasword);
-        System.out.println("Соединение успешно создано");
+        //System.out.println("Соединение успешно создано");
 
         return connection.createStatement();
     }
