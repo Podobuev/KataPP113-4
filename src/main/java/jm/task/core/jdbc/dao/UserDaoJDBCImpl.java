@@ -17,7 +17,6 @@ public class UserDaoJDBCImpl implements UserDao {
     public void createUsersTable() {
 
         try (Statement statement = new Util().connection()) {
-
             statement.executeUpdate("CREATE TABLE user (Id INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(20), LastName VARCHAR(20), Age TINYINT)");
             System.out.println("Таблица User созданна");
 
@@ -51,6 +50,8 @@ public class UserDaoJDBCImpl implements UserDao {
 
             statement.executeUpdate("INSERT into Kata1JDBC.user (Name, LastName, Age) VALUES ('" + name + "', '" + lastName + "', '" + age + "')");
             System.out.printf("User с именем – %s добавлен в базу данных \n", name);
+
+
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -95,7 +96,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
         try (Statement statement = new Util().connection()) {
 
-            statement.executeUpdate("TRUNCATE TABLE user ");
+            statement.executeUpdate("TRUNCATE TABLE user");
             System.out.println("Таблица User очищена");
 
         } catch (ClassNotFoundException | SQLException e) {
